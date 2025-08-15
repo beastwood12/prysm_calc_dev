@@ -108,6 +108,7 @@ export default function PrysmSalesCalculator() {
   const totalScanned = prysmOwners * data.monthlyScans;
   const buyers = totalScanned * (data.conversionRate / 100);
   const monthlySales = buyers * data.monthlyPurchase;
+  // The PV to CV calculation based on Jan 2025 - Jul 2025 global average
   const g15BreakawayBonus = Math.round(monthlySales * 0.05);
   const annualSales = monthlySales * 12;
 
@@ -325,7 +326,7 @@ export default function PrysmSalesCalculator() {
 
               <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-2 my-2">
                 <div className="text-xs text-emerald-800">
-                  <strong>Potential G1-6 Breakaway Bonus Volume (5%):</strong> {formatCurrency(usdAmount, 'USD')}
+                  <strong>Potential G1-6 Breakaway Bonus USD (5%):</strong> {formatCurrency(usdAmount, 'USD')}
                 </div>
                 
                 <div className="mt-3 p-2 bg-white rounded border">
